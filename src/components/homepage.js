@@ -7,6 +7,7 @@ const HomePage = () => {
   return (
     <Container>
       <Title>Spotify Stats</Title>
+      <Engine />
     </Container>
   );
 };
