@@ -13,4 +13,6 @@ export default HomePage;
 
 const Container = styled.div``;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  text-align: center;
+`;
