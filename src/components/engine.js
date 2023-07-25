@@ -43,6 +43,15 @@ const Engine = () => {
         //provides the option for the user to logout once user is logged in
         <button onClick={logOut}>Log Out</button>
       )}
+
+      {token ? (
+        <form>
+          <input type="text" />
+          <button type="submit">Search</button>
+        </form>
+      ) : (
+        <h2>Please Login</h2>
+      )}
     </div>
   );
 };
