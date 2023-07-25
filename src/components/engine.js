@@ -15,6 +15,7 @@ const Engine = () => {
     let token = window.localStorage.getItem("token");
 
     if (!token && hash) {
+      //prompts user to authenticate by logging in with a spotify account
       token = hash
         .substring(1)
         .split("&")
@@ -25,12 +26,23 @@ const Engine = () => {
       window.localStorage.setItem("token", token);
     }
 
-    setToken(token);
+    setToken(token); //sets user token after authentication assuming user has a spotify account(free or premium)
   }, []);
+
+  const logOut = () => {
+    //removes user token hence logging the user out
+    setToken("");
+    window.localStorage.removeItem("token");
+  };
 
   return (
     <div>
-      <a href={fullLink}>Click here</a>
+      {!token ? ( //if no token is available, prompts user to login
+        <a href={fullLink}>Login to Spotify</a>
+      ) : (
+        //provides the option for the user to logout once user is logged in
+        <button onClick={logOut}>Log Out</button>
+      )}
     </div>
   );
 };
