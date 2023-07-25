@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Engine = () => {
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
@@ -9,6 +10,8 @@ const Engine = () => {
   const fullLink = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`;
 
   const [token, setToken] = useState("");
+  const [searchKey, setSearchKey] = useState("");
+  const [artists, setArtists] = useState([]);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -35,6 +38,35 @@ const Engine = () => {
     window.localStorage.removeItem("token");
   };
 
+  const searchArtists = async (e) => { //retrieves artist data
+    e.preventDefault();
+    const data = await axios.get("https://api.spotify.com/v1/search", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      params: {
+        q: searchKey,
+        type: "artist",
+      },
+    });
+
+    setArtists(data.data.artists.items);
+    console.log(data);
+  };
+
+  const renderArtists = () => {
+    return artists.map((artist) => (
+      <div key={artist.id}>
+        {artist.images.length ? (
+          <img width={"40%"} src={artist.images[0].url} alt="" />
+        ) : (
+          <div>No Image Available</div>
+        )}
+        {artist.name}
+      </div>
+    ));
+  };
+
   return (
     <div>
       {!token ? ( //if no token is available, prompts user to login
@@ -45,13 +77,15 @@ const Engine = () => {
       )}
 
       {token ? (
-        <form>
-          <input type="text" />
+        <form onSubmit={searchArtists}>
+          <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
           <button type="submit">Search</button>
         </form>
       ) : (
         <h2>Please Login</h2>
       )}
+
+      {renderArtists()}
     </div>
   );
 };
