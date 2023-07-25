@@ -69,6 +69,7 @@ const Engine = () => {
     );
   };
 
+  //main return
   return (
     <div>
       {!token ? ( //if no token is available, prompts user to login
@@ -78,22 +79,32 @@ const Engine = () => {
         <button onClick={logOut}>Log Out</button>
       )}
 
-          {!searchKey ? (
-        console.log("no search key")
-          ) : (
-                  console.log(searchKey)
-          )}  
-      
-      {token ? (
+      {token ? ( //when user is logged in a token is available and the content is displayed
         <form onSubmit={searchArtists}>
-          <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-          <button type="submit">Search</button>
+          {!searchKey ? (
+            <span>
+              <input
+                type="text"
+                onChange={(e) => setSearchKey(e.target.value)}
+              />
+              <button type="submit">Search</button>
+            </span>
+          ) : (
+            <span>
+              <input
+                type="text"
+                onChange={(e) => setSearchKey(e.target.value)}
+              />
+              <button type="submit">Search</button>
+              {renderArtists(artists)}
+            </span>
+          )}
         </form>
       ) : (
-        <h2>Please Login</h2>
+        <h2>Please log into spotify to use the program</h2>
       )}
 
-      {renderArtists(artists)}
+      {!searchKey ? console.log("no search key") : console.log(searchKey)}
     </div>
   );
 };
