@@ -38,7 +38,8 @@ const Engine = () => {
     window.localStorage.removeItem("token");
   };
 
-  const searchArtists = async (e) => { //retrieves artist data
+  const searchArtists = async (e) => {
+    //retrieves artist data
     e.preventDefault();
     const data = await axios.get("https://api.spotify.com/v1/search", {
       headers: {
@@ -50,21 +51,22 @@ const Engine = () => {
       },
     });
 
-    setArtists(data.data.artists.items);
+    setArtists(data.data.artists.items[0]);
     console.log(data);
+    console.log(data.data.artists.items);
   };
 
-  const renderArtists = () => {
-    return artists.map((artist) => (
-      <div key={artist.id}>
-        {artist.images.length ? (
+  const renderArtists = (artist) => {
+    return (
+      <div>
+        {artist.images ? (
           <img width={"40%"} src={artist.images[0].url} alt="" />
         ) : (
           <div>No Image Available</div>
         )}
         {artist.name}
       </div>
-    ));
+    );
   };
 
   return (
@@ -76,6 +78,12 @@ const Engine = () => {
         <button onClick={logOut}>Log Out</button>
       )}
 
+          {!searchKey ? (
+        console.log("no search key")
+          ) : (
+                  console.log(searchKey)
+          )}  
+      
       {token ? (
         <form onSubmit={searchArtists}>
           <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
@@ -85,7 +93,7 @@ const Engine = () => {
         <h2>Please Login</h2>
       )}
 
-      {renderArtists()}
+      {renderArtists(artists)}
     </div>
   );
 };
