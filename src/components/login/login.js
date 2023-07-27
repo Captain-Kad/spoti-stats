@@ -6,7 +6,6 @@ import { accessUrl } from "./spotifyAuth";
 
 const Login = () => {
   return (
-    //d-flex justify-content-center align-items-center text-center
     <Container className="login-area">
       <img
         className="spotify-logo"
