@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const HomePage = () => {
+const HomePage = ({ spotify }) => {
   return (
-    <Container>
-      <Title>Spotify Stats</Title>
-    </Container>
+    <div>
+      <div>
+        {/* Sidebar */}
+        <div>
+          <Title>Spotify Stats</Title>
+          {/* Body */}
+        </div>
+      </div>
+    </div>
   );
 };
 
