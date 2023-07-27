@@ -1,10 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import SpotifyWebApi from "spotify-web-api-js";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Login from "./components/login/login";
 import { getToken } from "./components/login/spotifyAuth";
+
+const spotifyApi = new SpotifyWebApi();
 
 const App = () => {
   const [token, setToken] = useState(null);
@@ -17,9 +20,12 @@ const App = () => {
 
     if (_token) {
       setToken(_token);
-    }
 
-    // console.log(_token);
+      spotifyApi.setAccessToken(_token);
+      spotifyApi.getMe().then((userInfo) => {
+        console.log(userInfo);
+      });
+    }
   }, []);
 
   return (
