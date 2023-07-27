@@ -45,7 +45,7 @@ const LoginLogo = styled.img`
 const LoginButton = styled.a`
   color: white; // Text color of the button
   font-weight: 700; // Bold font weight for the button text
-  padding: 15px 30px; // Padding around the button text
+  padding: 15px; // Padding around the button text
   background-color: #1db954; // Background color of the button (Spotify green)
   border-radius: 99px; // Rounded border radius to make the button circular
   width: 15%; // Set the width of the button to 15% of its container
