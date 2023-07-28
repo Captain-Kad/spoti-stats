@@ -28,16 +28,16 @@ export default HomePage;
 const SidebarContainer = styled.div`
   background-color: black;
   height: 100vh;
-  width: 7%;
+  width: 6%;
   font-size: 16px;
 `;
 
 const BodyContainer = styled.div`
   background-color: #131516;
   height: 100vh;
-  width: 93%;
+  width: 94%;
 `;
 
 const Title = styled.h1`
-  /*  */
+  margin-top: 50px;
 `;
