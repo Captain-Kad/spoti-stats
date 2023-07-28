@@ -9,11 +9,27 @@ const Sidebar = () => {
     <SidebarContainer>
       <div>
         <Logo src={logo} alt="" />
-        <span className="d-md-block">Home</span>
-        <span className="d-md-block">Top Artists</span>
-        <span className="d-md-block">Top Tracks</span>
-        <span className="d-md-block">Top Albums</span>
-        <span className="d-md-block">Library</span>
+      </div>
+      <div>
+        <LogoList className="nav nav-pills flex-column nav-justified">
+          <li className="nav-item">
+            <a href="##" className="nav-link">
+              <span className="d-md-block">Home</span>
+            </a>
+          </li>
+          <li className="nav-item">
+            <span className="d-md-block">Top Artists</span>
+          </li>
+          <li className="nav-item">
+            <span className="d-md-block">Top Tracks</span>
+          </li>
+          <li className="nav-item">
+            <span className="d-md-block">Top Albums</span>
+          </li>
+          <li className="nav-item">
+            <span className="d-md-block">Library</span>
+          </li>
+        </LogoList>
       </div>
     </SidebarContainer>
   );
@@ -26,9 +42,16 @@ const SidebarContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 const Logo = styled.img`
   height: 60px;
   width: 60px;
+  margin-top: 30px;
+`;
+
+const LogoList = styled.ul`
+  list-style-type: none;
+  padding: 0;
 `;
