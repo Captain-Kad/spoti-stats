@@ -17,17 +17,29 @@ const Sidebar = () => {
               <span className="d-md-block">Home</span>
             </a>
           </li>
+
           <li className="nav-item">
-            <span className="d-md-block">Top Artists</span>
+            <a href="##" className="nav-link">
+              <span className="d-md-block">Top Artists</span>
+            </a>
           </li>
+
           <li className="nav-item">
-            <span className="d-md-block">Top Tracks</span>
+            <a href="##" className="nav-link">
+              <span className="d-md-block">Top Tracks</span>
+            </a>
           </li>
+
           <li className="nav-item">
-            <span className="d-md-block">Top Albums</span>
+            <a href="##" className="nav-link">
+              <span className="d-md-block">Top Albums</span>
+            </a>
           </li>
+
           <li className="nav-item">
-            <span className="d-md-block">Library</span>
+            <a href="##" className="nav-link">
+              <span className="d-md-block">Library</span>
+            </a>
           </li>
         </LogoList>
       </div>
