@@ -30,7 +30,6 @@ const SidebarContainer = styled.div`
   height: 100vh;
   width: 7%;
   font-size: 16px;
-  border: 1px solid black;
 `;
 
 const BodyContainer = styled.div`
