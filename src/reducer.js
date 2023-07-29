@@ -7,7 +7,7 @@ export const initialState = {
 
 // Reducer function to update the state based on dispatched actions
 const reducer = (state, action) => {
-  console.log(action); // Log the dispatched action to the console for debugging
+  // console.log(action); // Log the dispatched action to the console for debugging
 
   // Switch statement to handle different action types and update the state accordingly
   switch (action.type) {
