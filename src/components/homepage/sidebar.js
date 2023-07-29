@@ -4,6 +4,10 @@ import styled from "@emotion/styled";
 
 import logo from "../../images/spotify-home-logo.png";
 import HomeIcon from "@mui/icons-material/Home";
+import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
+import AudiotrackIcon from "@mui/icons-material/Audiotrack";
+import AlbumIcon from "@mui/icons-material/Album";
+import PersonIcon from "@mui/icons-material/Person";
 
 const Sidebar = () => {
   return (
@@ -22,24 +26,28 @@ const Sidebar = () => {
 
           <li className="nav-item">
             <a href="##" className="nav-link">
+              <PersonIcon />
               <span className="d-md-block">Top Artists</span>
             </a>
           </li>
 
           <li className="nav-item">
             <a href="##" className="nav-link">
+              <AudiotrackIcon />
               <span className="d-md-block">Top Tracks</span>
             </a>
           </li>
 
           <li className="nav-item">
             <a href="##" className="nav-link">
+              <AlbumIcon />
               <span className="d-md-block">Top Albums</span>
             </a>
           </li>
 
           <li className="nav-item">
             <a href="##" className="nav-link">
+              <LibraryMusicIcon />
               <span className="d-md-block">Library</span>
             </a>
           </li>
