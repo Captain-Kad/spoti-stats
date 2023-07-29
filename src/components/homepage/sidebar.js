@@ -67,4 +67,7 @@ const Logo = styled.img`
 const LogoList = styled.ul`
   list-style-type: none;
   padding: 0;
+  .nav-item:hover {
+    background-color: #131516;
+  }
 `;
