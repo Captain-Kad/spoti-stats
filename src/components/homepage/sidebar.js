@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "@emotion/styled";
 
 import logo from "../../images/spotify-home-logo.png";
+import HomeIcon from "@mui/icons-material/Home";
 
 const Sidebar = () => {
   return (
@@ -14,6 +15,7 @@ const Sidebar = () => {
         <LogoList className="nav nav-pills flex-column nav-justified">
           <li className="nav-item">
             <a href="##" className="nav-link active">
+              <HomeIcon />
               <span className="d-md-block">Home</span>
             </a>
           </li>
