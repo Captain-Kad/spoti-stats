@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ username }) => {
   return (
     <div>
       <img src="" alt="" />
