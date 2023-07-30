@@ -23,18 +23,25 @@ const Header = () => {
   getUserData();
 
   return (
-    <div>
+    <HeaderContainer>
       {/* {console.log(userData.profilePicture)} */}
       <ProfilePicture src={userData.profilePicture} alt="" />
-      <h1>{userData.username}</h1>
-    </div>
+      <Username>{userData.username}</Username>
+    </HeaderContainer>
   );
 };
 
 export default Header;
 
+const HeaderContainer = styled.div``;
+
 const ProfilePicture = styled.img`
   border-radius: 50%;
   margin-bottom: 20px;
   width: 10%;
+`;
+
+const Username = styled.h1`
+  font-size: 50px;
+  font-weight: 700;
 `;
