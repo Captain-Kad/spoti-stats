@@ -14,6 +14,7 @@ const Header = () => {
 
   const getUserData = async () => {
     const userJSON = await user;
+    // console.log(userJSON);
     setUserData({
       username: userJSON.display_name,
       profilePicture: userJSON.images[1].url,
