@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useDataLayerValue } from "../../dataLayer";
 
+import styled from "@emotion/styled";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const Header = () => {
   const [{ user }] = useDataLayerValue();
   const [userData, setUserData] = useState({
@@ -22,10 +25,16 @@ const Header = () => {
   return (
     <div>
       {/* {console.log(userData.profilePicture)} */}
-      <img src={userData.profilePicture} alt="" />
+      <ProfilePicture src={userData.profilePicture} alt="" />
       <h1>{userData.username}</h1>
     </div>
   );
 };
 
 export default Header;
+
+const ProfilePicture = styled.img`
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 10%;
+`;

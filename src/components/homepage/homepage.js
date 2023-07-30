@@ -39,5 +39,5 @@ const BodyContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  margin-top: 50px;
+  margin-bottom: 40px;
 `;
