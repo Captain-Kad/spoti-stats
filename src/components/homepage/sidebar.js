@@ -71,7 +71,7 @@ const Logo = styled.img`
   height: 60px;
   width: 60px;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 `;
 
 const LogoList = styled.ul`
