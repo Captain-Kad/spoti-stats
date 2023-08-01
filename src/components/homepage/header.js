@@ -9,15 +9,15 @@ const Header = () => {
   const [userData, setUserData] = useState({
     username: null,
     profilePicture: null,
+    external_urls: null,
   });
-  // console.log(user);
 
   const getUserData = async () => {
     const userJSON = await user;
-    // console.log(userJSON);
     setUserData({
       username: userJSON.display_name,
       profilePicture: userJSON.images[1].url,
+      external_urls: userJSON.external_urls.spotify,
     });
   };
 
@@ -25,9 +25,17 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      {/* {console.log(userData.profilePicture)} */}
       <ProfilePicture src={userData.profilePicture} alt="" />
-      <Username>{userData.username}</Username>
+      <Username>
+        <a
+          href={userData.external_urls}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-link"
+        >
+          {userData.username}
+        </a>
+      </Username>
     </HeaderContainer>
   );
 };
@@ -45,4 +53,7 @@ const ProfilePicture = styled.img`
 const Username = styled.h1`
   font-size: 50px;
   font-weight: 700;
+  a:hover {
+    color: #3ce478;
+  }
 `;
