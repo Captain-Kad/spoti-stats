@@ -46,7 +46,7 @@ const HeaderContainer = styled.div``;
 
 const ProfilePicture = styled.img`
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 10%;
 `;
 
