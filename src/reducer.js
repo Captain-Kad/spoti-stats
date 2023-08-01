@@ -11,6 +11,13 @@ const reducer = (state, action) => {
 
   // Switch statement to handle different action types and update the state accordingly
   switch (action.type) {
+    case "SET_TOKEN":
+      // When "SET_TOKEN" action is dispatched, update the token in the state
+      return {
+        ...state, // Maintain the existing state
+        token: action.token, // Update the token with the new value from the action
+      };
+
     case "SET_USER":
       // When "SET_USER" action is dispatched, update the user in the state
       return {
@@ -18,11 +25,11 @@ const reducer = (state, action) => {
         user: action.user, // Update the user with the new value from the action
       };
 
-    case "SET_TOKEN":
-      // When "SET_TOKEN" action is dispatched, update the token in the state
+    case "SET_CURRENT_PLAYING_TRACK":
+      // When "SET_CURRENT_PLAYING_TRACK" action is dispatched, update the current playing track in the state
       return {
         ...state, // Maintain the existing state
-        token: action.token, // Update the token with the new value from the action
+        current_playing_track: action.current_playing_track, // Update the token with the new value from the action
       };
 
     default:
