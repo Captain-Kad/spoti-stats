@@ -12,7 +12,8 @@ import { useDataLayerValue } from "./dataLayer";
 const spotifyApi = new SpotifyWebApi();
 
 const App = () => {
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ token, user, current_playing_track }, dispatch] =
+    useDataLayerValue();
 
   useEffect(
     () => {
@@ -35,11 +36,19 @@ const App = () => {
             user: user,
           });
         });
+
+        spotifyApi.getMyCurrentPlayingTrack().then((current_playing_track) => {
+          dispatch({
+            type: "SET_CURRENT_PLAYING_TRACK",
+            current_playing_track: current_playing_track,
+          });
+        });
       }
     } //[]
   );
 
-  console.log(user);
+  // console.log(user);
+  console.log(current_playing_track);
 
   return (
     <div className="app">
