@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Header from "./header";
 import Sidebar from "./sidebar";
+import Logout from "./logout";
 
 const HomePage = ({ spotify }) => {
   return (
@@ -16,6 +17,7 @@ const HomePage = ({ spotify }) => {
         <BodyContainer className="col-md-10">
           <Title>Welcome To Spotify Stats</Title>
           <Header />
+          <Logout />
           {/* Body */}
         </BodyContainer>
       </div>
