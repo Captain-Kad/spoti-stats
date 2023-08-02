@@ -25,11 +25,11 @@ const reducer = (state, action) => {
         user: action.user, // Update the user with the new value from the action
       };
 
-    case "SET_CURRENT_PLAYING_TRACK":
+    case "SET_RECENTLY_PLAYED_TRACKS":
       // When "SET_CURRENT_PLAYING_TRACK" action is dispatched, update the current playing track in the state
       return {
         ...state, // Maintain the existing state
-        current_playing_track: action.current_playing_track, // Update the token with the new value from the action
+        recently_played_tracks: action.recently_played_tracks,
       };
 
     default:
