@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header";
 import Sidebar from "./sidebar";
 import Logout from "./logout";
+import RecentlyPlayedTracks from "./recentlyPlayedTracks";
 
 const HomePage = ({ spotify }) => {
   return (
@@ -18,6 +19,7 @@ const HomePage = ({ spotify }) => {
           <Title>Welcome To Spotify Stats</Title>
           <Header />
           <Logout />
+          <RecentlyPlayedTracks />
           {/* Body */}
         </BodyContainer>
       </div>
@@ -38,6 +40,7 @@ const BodyContainer = styled.div`
   background-color: #131516;
   height: 100vh;
   width: 93.1%;
+  overflow-y: overlay;
 `;
 
 const Title = styled.h1`
