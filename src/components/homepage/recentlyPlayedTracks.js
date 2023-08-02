@@ -23,7 +23,7 @@ const RecentlyPlayedTracks = () => {
   const newTrack = userData.currentTrack.map((track) => {
     return (
       <Track>
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-md-1">
             <img src={track.track.album.images[2].url} alt="" />
           </div>
@@ -52,6 +52,5 @@ const RecentTrackList = styled.ul`
 `;
 
 const Track = styled.li`
-margin-top: 50px;
-
-`
+  margin-top: 50px;
+`;
