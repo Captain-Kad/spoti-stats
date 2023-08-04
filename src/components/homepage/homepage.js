@@ -9,7 +9,7 @@ import RecentlyPlayedTracks from "./recentlyPlayedTracks";
 
 const HomePage = ({ spotify }) => {
   return (
-    <div className="container-fluid text-center">
+    <HomePageContainer className="container-fluid text-center">
       <div className="row">
         <SidebarContainer className="col-md-2">
           <Sidebar />
@@ -23,11 +23,18 @@ const HomePage = ({ spotify }) => {
           {/* Body */}
         </BodyContainer>
       </div>
-    </div>
+    </HomePageContainer>
   );
 };
 
 export default HomePage;
+
+const HomePageContainer = styled.div`
+  .container-fluid {
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 const SidebarContainer = styled.div`
   background-color: black;
