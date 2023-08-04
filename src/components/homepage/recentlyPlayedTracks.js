@@ -28,13 +28,27 @@ const RecentlyPlayedTracks = () => {
 
   const newTrack = userData.currentTrack.map((track) => {
     return (
-      <Track>
+      <Track key={track.track.id}>
         <div className="row align-items-center">
-          <div className="col-md-1">
+          <TrackImageContainer className="col-md-1">
             <img src={track.track.album.images[2].url} alt="" />
+          </TrackImageContainer>
+
+          <div className="col-md-10 d-block justify-content-start">
+            <span className="d-flex">{track.track.name}</span>
+            <TrackArtistContainer className="d-flex">
+              {track.track.artists.map((artist, index) => (
+                <span className="d-flex" key={artist.id}>
+                  {artist.name}
+                  {index !== track.track.artists.length - 1 ? `,` : ""}&nbsp;
+                </span>
+              ))}
+            </TrackArtistContainer>
           </div>
-          <div className="col-md-10">{track.track.name}</div>
-          <div className="col-md-1">{msToS(track.track.duration_ms)}</div>
+
+          <div className="col-md-1 d-flex justify-content-end">
+            {msToS(track.track.duration_ms)}
+          </div>
         </div>
       </Track>
     );
@@ -59,4 +73,26 @@ const RecentTrackList = styled.ul`
 
 const Track = styled.li`
   margin-top: 50px;
+  .row {
+    margin: 0;
+    padding: 0;
+  }
+
+  .col-md-10 {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+const TrackImageContainer = styled.div`
+  .col-md-1 {
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+const TrackArtistContainer = styled.div`
+  font-size: 14px;
+  //make text color red
+  color: red;
 `;
