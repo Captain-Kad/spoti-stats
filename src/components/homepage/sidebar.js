@@ -80,4 +80,10 @@ const LogoList = styled.ul`
   .nav-item:hover {
     background-color: #131516;
   }
+  .nav-link {
+    color: rgb(22, 159, 71);
+  }
+  .nav-link.active {
+    background-color: rgb(22, 159, 71);
+  }
 `;
