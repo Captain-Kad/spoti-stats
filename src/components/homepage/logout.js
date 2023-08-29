@@ -22,4 +22,5 @@ const Button = styled.button`
   border-radius: 99px;
   width: 10%;
   margin-top: 20px;
+  margin-bottom: 20px;
 `;
