@@ -56,6 +56,7 @@ const RecentlyPlayedTracks = () => {
 
   return (
     <TrackListContainer className="container-fluid text-center">
+      <h1 className="left-align">Recently Played Tracks</h1>
       <RecentTrackList>{newTrack}</RecentTrackList>
     </TrackListContainer>
   );
@@ -63,7 +64,12 @@ const RecentlyPlayedTracks = () => {
 
 export default RecentlyPlayedTracks;
 
-const TrackListContainer = styled.div``;
+const TrackListContainer = styled.div`
+  .left-align {
+    text-align: left;
+    margin-left: 35px;
+  }
+`;
 
 const RecentTrackList = styled.ul`
   list-style-type: none;
@@ -72,7 +78,7 @@ const RecentTrackList = styled.ul`
 `;
 
 const Track = styled.li`
-  margin-top: 50px;
+  margin-top: 20px;
   .row {
     margin: 0;
     padding: 0;
@@ -93,6 +99,5 @@ const TrackImageContainer = styled.div`
 
 const TrackArtistContainer = styled.div`
   font-size: 14px;
-  //make text color red
-  color: red;
+  color: rgb(169, 161, 150);
 `;
