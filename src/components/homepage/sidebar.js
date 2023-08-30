@@ -18,7 +18,7 @@ const Sidebar = () => {
       <div>
         <LogoList className="nav nav-pills flex-column nav-justified">
           <li className="nav-item">
-            <a href="##" className="nav-link active">
+            <a href="./homepage.js" className="nav-link active">
               <HomeIcon />
               <span className="d-md-block">Home</span>
             </a>
