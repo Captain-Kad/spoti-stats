@@ -4,7 +4,18 @@ import styled from "@emotion/styled";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Logout = () => {
-  return <Button className="btn btn-lg">LOGOUT</Button>;
+  const handleLogout = () => {
+    // Clear token from local storage
+    window.localStorage.removeItem("token");
+    // Reload the page to handle the logout and render Login component
+    window.location.reload();
+  };
+
+  return (
+    <Button className="btn btn-lg" onClick={handleLogout}>
+      LOGOUT
+    </Button>
+  );
 };
 
 export default Logout;
