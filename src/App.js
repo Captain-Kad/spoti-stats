@@ -45,7 +45,7 @@ const App = () => {
   }, []);
 
   // console.log(user);
-  console.log(recently_played_tracks);
+  // console.log(recently_played_tracks);
 
   return (
     <div className="app">
