@@ -24,6 +24,12 @@ const reducer = (state, action) => {
         recently_played_tracks: action.recently_played_tracks,
       };
 
+    case "SET_TOP_ARTISTS":
+      return {
+        ...state, // Maintain the existing state
+        top_artists: action.top_artists,
+      };
+
     default:
       // For any other action type (unhandled), return the current state unchanged
       return state;
