@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Login from "./components/login/login";
 import { getToken } from "./components/login/spotifyAuth";
-import HomePage from "./components/homepage/homepage";
 import { useDataLayerValue } from "./dataLayer";
+import MainPage from "./components/mainPage/mainpage";
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -54,11 +54,7 @@ const App = () => {
   // console.log(user);
   // console.log(recently_played_tracks);
 
-  return (
-    <div className="app">
-      {token ? <HomePage spotifyApi={spotifyApi} /> : <Login />}
-    </div>
-  );
+  return <div className="app">{token ? <MainPage /> : <Login />}</div>;
 };
 
 export default App;
