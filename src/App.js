@@ -11,8 +11,8 @@ import { useDataLayerValue } from "./dataLayer";
 const spotifyApi = new SpotifyWebApi();
 
 const App = () => {
-  const [{ token, user, recently_played_tracks }, dispatch] =
-    useDataLayerValue();
+  const [token, setToken] = useState("");
+  const [{ user, recently_played_tracks }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     // set the token
