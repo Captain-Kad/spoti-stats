@@ -36,10 +36,7 @@ const MainPage = () => {
           <Sidebar />
         </SidebarContainer>
 
-        <BodyContainer className="col-md-10">
-          {component}
-          {/* Body */}
-        </BodyContainer>
+        <BodyContainer className="col-md-10">{component}</BodyContainer>
       </div>
     </PageContainer>
   );
