@@ -16,7 +16,6 @@ const App = () => {
 
   useEffect(() => {
     // Try to get token from localStorage
-    // const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
 
     if (token) {
