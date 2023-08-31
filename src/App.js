@@ -15,19 +15,14 @@ const App = () => {
   const [{ user, recently_played_tracks }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
-    // set the token
-    const hash = getToken();
-    window.location.hash = "";
-    const _token = hash.access_token;
+    // Try to get token from localStorage
+    let storedToken = window.localStorage.getItem("token");
 
-    if (_token) {
-      dispatch({
-        type: "SET_TOKEN",
-        token: _token,
-      });
+    if (storedToken) {
+      setToken(storedToken);
+      spotifyApi.setAccessToken(storedToken);
 
-      spotifyApi.setAccessToken(_token);
-
+      // Fetch user and recently played tracks
       spotifyApi.getMe().then((user) => {
         dispatch({
           type: "SET_USER",
@@ -41,8 +36,47 @@ const App = () => {
           recently_played_tracks: recently_played_tracks,
         });
       });
+    } else {
+      // Try to get token from URL hash
+      const hash = getToken();
+      if (hash.access_token) {
+        const accessToken = hash.access_token;
+        setToken(accessToken);
+        spotifyApi.setAccessToken(accessToken);
+
+        // Store token in localStorage
+        window.localStorage.setItem("token", accessToken);
+      }
     }
-  }, []);
+
+    // set the token
+    // const hash = getToken();
+    // window.location.hash = "";
+    // const _token = hash.access_token;
+
+    // if (_token) {
+    //   dispatch({
+    //     type: "SET_TOKEN",
+    //     token: _token,
+    //   });
+
+    //   spotifyApi.setAccessToken(_token);
+
+    //   spotifyApi.getMe().then((user) => {
+    //     dispatch({
+    //       type: "SET_USER",
+    //       user: user,
+    //     });
+    //   });
+
+    //   spotifyApi.getMyRecentlyPlayedTracks().then((recently_played_tracks) => {
+    //     dispatch({
+    //       type: "SET_RECENTLY_PLAYED_TRACKS",
+    //       recently_played_tracks: recently_played_tracks,
+    //     });
+    //   });
+    // }
+  }, [dispatch]);
 
   // console.log(user);
   // console.log(recently_played_tracks);
