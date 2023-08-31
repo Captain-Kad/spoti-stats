@@ -2,7 +2,6 @@
 export const initialState = {
   user: null, // Represents the authenticated user details
   playlists: [], // Array to store user playlists
-  token: null, // Holds the Spotify access token
 };
 
 // Reducer function to update the state based on dispatched actions
@@ -11,13 +10,6 @@ const reducer = (state, action) => {
 
   // Switch statement to handle different action types and update the state accordingly
   switch (action.type) {
-    case "SET_TOKEN":
-      // When "SET_TOKEN" action is dispatched, update the token in the state
-      return {
-        ...state, // Maintain the existing state
-        token: action.token, // Update the token with the new value from the action
-      };
-
     case "SET_USER":
       // When "SET_USER" action is dispatched, update the user in the state
       return {
