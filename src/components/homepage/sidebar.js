@@ -17,40 +17,30 @@ const Sidebar = () => {
       </div>
       <div>
         <LogoList className="nav nav-pills flex-column nav-justified">
-          <li className="nav-item">
-            <a href="./homepage.js" className="nav-link active">
-              <HomeIcon />
-              <span className="d-md-block">Home</span>
-            </a>
-          </li>
+          <CustomLink href="/">
+            <HomeIcon />
+            <span className="d-md-block">Home</span>
+          </CustomLink>
 
-          <li className="nav-item">
-            <a href="##" className="nav-link">
-              <PersonIcon />
-              <span className="d-md-block">Top Artists</span>
-            </a>
-          </li>
+          <CustomLink href="/topArtists">
+            <PersonIcon />
+            <span className="d-md-block">Top Artists</span>
+          </CustomLink>
 
-          <li className="nav-item">
-            <a href="##" className="nav-link">
-              <AudiotrackIcon />
-              <span className="d-md-block">Top Tracks</span>
-            </a>
-          </li>
+          <CustomLink href="/topTracks">
+            <AudiotrackIcon />
+            <span className="d-md-block">Top Tracks</span>
+          </CustomLink>
 
-          <li className="nav-item">
-            <a href="##" className="nav-link">
-              <AlbumIcon />
-              <span className="d-md-block">Top Albums</span>
-            </a>
-          </li>
+          <CustomLink href="/topAlbums">
+            <AlbumIcon />
+            <span className="d-md-block">Top Albums</span>
+          </CustomLink>
 
-          <li className="nav-item">
-            <a href="##" className="nav-link">
-              <LibraryMusicIcon />
-              <span className="d-md-block">Library</span>
-            </a>
-          </li>
+          <CustomLink href="/library">
+            <LibraryMusicIcon />
+            <span className="d-md-block">Library</span>
+          </CustomLink>
         </LogoList>
       </div>
     </SidebarContainer>
@@ -58,6 +48,18 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+const CustomLink = ({ href, children }) => {
+  const path = window.location.pathname;
+
+  return (
+    <li className="nav-item">
+      <a href={href} className={path === href ? "nav-link active" : "nav-link"}>
+        {children}
+      </a>
+    </li>
+  );
+};
 
 const SidebarContainer = styled.div`
   display: flex;
