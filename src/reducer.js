@@ -36,6 +36,12 @@ const reducer = (state, action) => {
         top_tracks: action.top_tracks,
       };
 
+    case "SET_SAVED_PLAYISTS":
+      return {
+        ...state, // Maintain the existing state
+        saved_playlists: action.saved_playlists,
+      };
+
     default:
       // For any other action type (unhandled), return the current state unchanged
       return state;
