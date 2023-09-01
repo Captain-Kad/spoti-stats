@@ -12,8 +12,10 @@ const spotifyApi = new SpotifyWebApi();
 
 const App = () => {
   const [token, setToken] = useState("");
-  const [{ user, recently_played_tracks, top_artists, top_tracks }, dispatch] =
-    useDataLayerValue();
+  const [
+    { user, recently_played_tracks, top_artists, top_tracks, saved_playlists },
+    dispatch,
+  ] = useDataLayerValue();
 
   useEffect(() => {
     // Try to get token from localStorage
@@ -56,6 +58,13 @@ const App = () => {
             top_tracks: top_tracks,
           });
         });
+
+      spotifyApi.getUserPlaylists({ limit: 20 }).then((saved_playlists) => {
+        dispatch({
+          type: "SET_SAVED_PLAYISTS",
+          saved_playlists: saved_playlists,
+        });
+      });
     } else {
       // Try to get token from URL hash
       const hash = getToken();
@@ -73,7 +82,8 @@ const App = () => {
   // console.log(user);
   // console.log(recently_played_tracks);
   // console.log(top_artists);
-  console.log(top_tracks);
+  // console.log(top_tracks);
+  console.log(saved_playlists);
 
   return <div className="app">{token ? <MainPage /> : <Login />}</div>;
 };
