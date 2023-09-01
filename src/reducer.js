@@ -30,6 +30,12 @@ const reducer = (state, action) => {
         top_artists: action.top_artists,
       };
 
+    case "SET_TOP_TRACKS":
+      return {
+        ...state, // Maintain the existing state
+        top_tracks: action.top_tracks,
+      };
+
     default:
       // For any other action type (unhandled), return the current state unchanged
       return state;
