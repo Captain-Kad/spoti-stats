@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomePage from "../homepage/homepage";
-import Sidebar from "../homepage/sidebar";
+import Sidebar from "./sidebar";
 import TopArtists from "../artists/topArtists";
 
 const MainPage = () => {
