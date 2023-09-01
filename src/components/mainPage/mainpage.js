@@ -6,6 +6,7 @@ import HomePage from "../homepage/homepage";
 import Sidebar from "./sidebar";
 import TopArtists from "../topArtists/topArtists";
 import TopTracks from "../topTracks/topTracks";
+import Library from "../savedAlbums/library";
 
 const MainPage = () => {
   let component;
@@ -23,7 +24,7 @@ const MainPage = () => {
       component = "";
       break;
     case "/library":
-      component = "";
+      component = <Library />;
       break;
 
     default:
