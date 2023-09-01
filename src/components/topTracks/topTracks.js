@@ -5,6 +5,8 @@ import styled from "@emotion/styled";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const TopTracks = () => {
+  const [{ top_tracks }] = useDataLayerValue();
+
   return (
     <PageContainer>
       <h1>Top Tracks</h1>
