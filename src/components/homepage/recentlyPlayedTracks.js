@@ -28,7 +28,7 @@ const RecentlyPlayedTracks = () => {
 
   const newTrack = userData.currentTrack.map((track) => {
     return (
-      <Track key={track.track.id}>
+      <Track key={track.played_at}>
         <div className="row align-items-center">
           <TrackImageContainer className="col-md-1">
             <img src={track.track.album.images[2].url} alt="" />
