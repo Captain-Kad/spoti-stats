@@ -23,8 +23,12 @@ const TopArtists = () => {
   const newArtist = userData.artists.map((artist) => {
     return (
       <Artist className="col-md-2">
-        <div className="fill-up">
-          <img src={artist.images[2].url} alt="" className="rounded-circle" />
+        <div>
+          <ArtistImage
+            src={artist.images[2].url}
+            alt=""
+            className="rounded-circle"
+          />
           <span className="d-md-block">{artist.name}</span>
         </div>
       </Artist>
@@ -50,8 +54,8 @@ const BodyContainer = styled.div`
 const Artist = styled.div`
   margin-bottom: 50px;
   padding: 0;
+`;
 
-  .fill-up {
-    flex-direction: column;
-  }
+const ArtistImage = styled.img`
+  width: 60%;
 `;
