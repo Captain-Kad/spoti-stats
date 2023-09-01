@@ -6,6 +6,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const TopTracks = () => {
   const [{ top_tracks }] = useDataLayerValue();
+  const [userData, setUserData] = useState({
+    currentTrack: [],
+  });
+
+  const getUserData = async () => {
+    const userJSON = await top_tracks;
+    setUserData({
+      currentTrack: userJSON.items,
+    });
+  };
+
+  getUserData();
+  console.log(userData);
 
   return (
     <PageContainer>
