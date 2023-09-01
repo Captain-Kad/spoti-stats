@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomePage from "../homepage/homepage";
 import Sidebar from "./sidebar";
-import TopArtists from "../artists/topArtists";
+import TopArtists from "../topArtists/topArtists";
 
 const MainPage = () => {
   let component;
