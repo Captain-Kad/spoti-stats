@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HomePage from "../homepage/homepage";
 import Sidebar from "./sidebar";
 import TopArtists from "../topArtists/topArtists";
+import TopTracks from "../topTracks/topTracks";
 
 const MainPage = () => {
   let component;
@@ -16,7 +17,7 @@ const MainPage = () => {
       component = <TopArtists />;
       break;
     case "/topTracks":
-      component = "";
+      component = <TopTracks />;
       break;
     case "/topAlbums":
       component = "";
