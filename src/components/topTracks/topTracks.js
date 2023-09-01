@@ -18,7 +18,7 @@ const TopTracks = () => {
   };
 
   getUserData();
-  console.log(userData);
+//   console.log(userData);
 
   const msToS = (ms) => {
     var minutes = Math.floor(ms / 60000);
